@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+        <main class="container p-5">
+            <table class= "table table-striped">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>{{allTotal}}</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for allData in allData %}
+                    <tr>
+                        <td>{{allData["symbol"]}}</td>
+                        <td>{{allData["name"]}}</td>
+                        <td>{{allData["shares"]}}</td>
+                        <td>{{allData["price"]}}</td>
+                        <td>{{allData["total"]}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4">CASH</td>
+                        <td>{{cash}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+{% endblock %}
