@@ -2,9 +2,6 @@ import os
 import re
 # Python 3.x code
 # Imports
-import tkinter
-from tkinter import messagebox
-
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
