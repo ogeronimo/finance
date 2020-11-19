@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <main class="container p-5">
+            <table class= "table table-striped">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>Type</th>
+                        <th>Transacted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for allData in allData%}
+                    <tr>
+                        <td>{{allData["symbol"]}}</td>
+                        <td>{{allData["shares"]}}</td>
+                        <td>{{allData["price"]}}</td>
+                        <td>{{allData["type"]}}</td>
+                        <td>{{allData["date"]}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </main>
+{% endblock %}
